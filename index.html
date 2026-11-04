@@ -107,20 +107,12 @@ body {
   border: 1px solid #d5dee8;
   border-radius: 10px;
   font-size: 14px;
+  outline: none;
 }
 
-.btn {
-  border: 1px solid #d5dee8;
-  background: white;
-  color: var(--navy);
-  padding: 10px 13px;
-  border-radius: 10px;
-  font-weight: 750;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background: #f4f8fc;
+.search:focus {
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px #ff850020;
 }
 
 .table-wrap {
@@ -250,61 +242,12 @@ tbody tr:hover {
     min-width: 100%;
   }
 
-  .btn {
-    flex: 1;
-  }
-
   .container {
     padding: 0 10px;
   }
 
   .footer {
     padding: 14px 16px;
-  }
-}
-
-@media print {
-  body {
-    background: white;
-  }
-
-  .hero {
-    padding: 18px;
-    background: white;
-    color: var(--navy);
-  }
-
-  .hero p,
-  .kicker {
-    color: #64748b;
-  }
-
-  .container {
-    margin: 0 auto;
-    padding: 0;
-  }
-
-  .panel {
-    box-shadow: none;
-    border: 0;
-  }
-
-  .toolbar .tools {
-    display: none;
-  }
-
-  .toolbar {
-    padding: 12px 0;
-  }
-
-  thead th {
-    print-color-adjust: exact;
-    -webkit-print-color-adjust: exact;
-  }
-
-  tbody tr:nth-child(odd) {
-    print-color-adjust: exact;
-    -webkit-print-color-adjust: exact;
   }
 }
 </style>
@@ -335,10 +278,6 @@ tbody tr:hover {
         placeholder="Buscar palabra o traducción..."
         aria-label="Buscar vocabulario"
       >
-
-      <button class="btn" onclick="window.print()">
-        Imprimir / Guardar PDF
-      </button>
     </div>
   </div>
 
@@ -360,196 +299,112 @@ tbody tr:hover {
           <td class="num">1</td>
           <td class="word">obstacle</td>
           <td class="translation">obstáculo</td>
-          <td class="sentence">
-            <span class="lang-label">EN:</span>
-            The fallen tree was an obstacle on the road.
-          </td>
-          <td class="sentence spanish-sentence">
-            <span class="lang-label">ES:</span>
-            El árbol caído era un obstáculo en el camino.
-          </td>
+          <td class="sentence">The fallen tree was an obstacle on the road.</td>
+          <td class="sentence spanish-sentence">El árbol caído era un obstáculo en el camino.</td>
         </tr>
 
         <tr>
           <td class="num">2</td>
           <td class="word">speed</td>
           <td class="translation">velocidad</td>
-          <td class="sentence">
-            <span class="lang-label">EN:</span>
-            The car drove at a high speed on the highway.
-          </td>
-          <td class="sentence spanish-sentence">
-            <span class="lang-label">ES:</span>
-            El automóvil iba a gran velocidad por la carretera.
-          </td>
+          <td class="sentence">The car drove at a high speed on the highway.</td>
+          <td class="sentence spanish-sentence">El automóvil iba a gran velocidad por la carretera.</td>
         </tr>
 
         <tr>
           <td class="num">3</td>
           <td class="word">concentration</td>
           <td class="translation">concentración</td>
-          <td class="sentence">
-            <span class="lang-label">EN:</span>
-            You need concentration to do well on tests.
-          </td>
-          <td class="sentence spanish-sentence">
-            <span class="lang-label">ES:</span>
-            Necesitas concentración para que te vaya bien en los exámenes.
-          </td>
+          <td class="sentence">You need concentration to do well on tests.</td>
+          <td class="sentence spanish-sentence">Necesitas concentración para que te vaya bien en los exámenes.</td>
         </tr>
 
         <tr>
           <td class="num">4</td>
           <td class="word">path</td>
           <td class="translation">camino</td>
-          <td class="sentence">
-            <span class="lang-label">EN:</span>
-            We stayed on the path so we wouldn’t get lost in the woods.
-          </td>
-          <td class="sentence spanish-sentence">
-            <span class="lang-label">ES:</span>
-            Nos quedamos en el camino para no perdernos en el bosque.
-          </td>
+          <td class="sentence">We stayed on the path so we wouldn’t get lost in the woods.</td>
+          <td class="sentence spanish-sentence">Nos quedamos en el camino para no perdernos en el bosque.</td>
         </tr>
 
         <tr>
           <td class="num">5</td>
           <td class="word">instructor</td>
           <td class="translation">instructor(a)</td>
-          <td class="sentence">
-            <span class="lang-label">EN:</span>
-            Our art instructor showed us how to paint beautiful flowers.
-          </td>
-          <td class="sentence spanish-sentence">
-            <span class="lang-label">ES:</span>
-            Nuestro instructor de arte nos mostró cómo pintar flores hermosas.
-          </td>
+          <td class="sentence">Our art instructor showed us how to paint beautiful flowers.</td>
+          <td class="sentence spanish-sentence">Nuestro instructor de arte nos mostró cómo pintar flores hermosas.</td>
         </tr>
 
         <tr>
           <td class="num">6</td>
           <td class="word">worldwide</td>
           <td class="translation">mundialmente</td>
-          <td class="sentence">
-            <span class="lang-label">EN:</span>
-            Soccer is a sport played worldwide.
-          </td>
-          <td class="sentence spanish-sentence">
-            <span class="lang-label">ES:</span>
-            El fútbol es un deporte que se practica mundialmente.
-          </td>
+          <td class="sentence">Soccer is a sport played worldwide.</td>
+          <td class="sentence spanish-sentence">El fútbol es un deporte que se practica mundialmente.</td>
         </tr>
 
         <tr>
           <td class="num">7</td>
           <td class="word">safety</td>
           <td class="translation">seguridad</td>
-          <td class="sentence">
-            <span class="lang-label">EN:</span>
-            Always wear a helmet for safety when riding a bike.
-          </td>
-          <td class="sentence spanish-sentence">
-            <span class="lang-label">ES:</span>
-            Siempre usa un casco por seguridad cuando andes en bicicleta.
-          </td>
+          <td class="sentence">Always wear a helmet for safety when riding a bike.</td>
+          <td class="sentence spanish-sentence">Siempre usa un casco por seguridad cuando andes en bicicleta.</td>
         </tr>
 
         <tr>
           <td class="num">8</td>
           <td class="word">forward</td>
           <td class="translation">hacia adelante</td>
-          <td class="sentence">
-            <span class="lang-label">EN:</span>
-            He took two steps forward to get a better view.
-          </td>
-          <td class="sentence spanish-sentence">
-            <span class="lang-label">ES:</span>
-            Él dio dos pasos hacia adelante para tener una mejor vista.
-          </td>
+          <td class="sentence">He took two steps forward to get a better view.</td>
+          <td class="sentence spanish-sentence">Él dio dos pasos hacia adelante para tener una mejor vista.</td>
         </tr>
 
         <tr>
           <td class="num">9</td>
           <td class="word">behave</td>
           <td class="translation">comportarse</td>
-          <td class="sentence">
-            <span class="lang-label">EN:</span>
-            You must behave properly in the classroom.
-          </td>
-          <td class="sentence spanish-sentence">
-            <span class="lang-label">ES:</span>
-            Debes comportarte adecuadamente en el salón de clases.
-          </td>
+          <td class="sentence">You must behave properly in the classroom.</td>
+          <td class="sentence spanish-sentence">Debes comportarte adecuadamente en el salón de clases.</td>
         </tr>
 
         <tr>
           <td class="num">10</td>
           <td class="word">course</td>
           <td class="translation">circuito</td>
-          <td class="sentence">
-            <span class="lang-label">EN:</span>
-            The runners raced around the track course.
-          </td>
-          <td class="sentence spanish-sentence">
-            <span class="lang-label">ES:</span>
-            Los corredores dieron vueltas alrededor del circuito de la pista.
-          </td>
+          <td class="sentence">The runners raced around the track course.</td>
+          <td class="sentence spanish-sentence">Los corredores dieron vueltas alrededor del circuito de la pista.</td>
         </tr>
 
         <tr>
           <td class="num">11</td>
           <td class="word">movement</td>
           <td class="translation">movimiento</td>
-          <td class="sentence">
-            <span class="lang-label">EN:</span>
-            I watch the movement of the leaves as the wind blows.
-          </td>
-          <td class="sentence spanish-sentence">
-            <span class="lang-label">ES:</span>
-            Observo el movimiento de las hojas mientras sopla el viento.
-          </td>
+          <td class="sentence">I watch the movement of the leaves as the wind blows.</td>
+          <td class="sentence spanish-sentence">Observo el movimiento de las hojas mientras sopla el viento.</td>
         </tr>
 
         <tr>
           <td class="num">12</td>
           <td class="word">accurate</td>
           <td class="translation">preciso</td>
-          <td class="sentence">
-            <span class="lang-label">EN:</span>
-            Using an accurate map helps people find the right place easily.
-          </td>
-          <td class="sentence spanish-sentence">
-            <span class="lang-label">ES:</span>
-            Usar un mapa preciso ayuda a las personas a encontrar fácilmente el lugar correcto.
-          </td>
+          <td class="sentence">Using an accurate map helps people find the right place easily.</td>
+          <td class="sentence spanish-sentence">Usar un mapa preciso ayuda a las personas a encontrar fácilmente el lugar correcto.</td>
         </tr>
 
         <tr>
           <td class="num">13</td>
           <td class="word">ethical</td>
           <td class="translation">ético</td>
-          <td class="sentence">
-            <span class="lang-label">EN:</span>
-            Being honest is an important ethical principle.
-          </td>
-          <td class="sentence spanish-sentence">
-            <span class="lang-label">ES:</span>
-            Ser honesto es un principio ético importante.
-          </td>
+          <td class="sentence">Being honest is an important ethical principle.</td>
+          <td class="sentence spanish-sentence">Ser honesto es un principio ético importante.</td>
         </tr>
 
         <tr>
           <td class="num">14</td>
           <td class="word">courageous</td>
           <td class="translation">valiente</td>
-          <td class="sentence">
-            <span class="lang-label">EN:</span>
-            She was a courageous explorer who faced many dangers.
-          </td>
-          <td class="sentence spanish-sentence">
-            <span class="lang-label">ES:</span>
-            Ella era una exploradora valiente que enfrentó muchos peligros.
-          </td>
+          <td class="sentence">She was a courageous explorer who faced many dangers.</td>
+          <td class="sentence spanish-sentence">Ella era una exploradora valiente que enfrentó muchos peligros.</td>
         </tr>
 
       </tbody>
