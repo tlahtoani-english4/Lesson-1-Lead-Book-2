@@ -1,0 +1,596 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 1 — Lead Book 2 Vocabulary</title>
+
+<style>
+:root {
+  --navy: #102b4e;
+  --orange: #ff8500;
+  --ink: #24364b;
+  --muted: #64748b;
+  --cream: #fbf6ec;
+  --line: #e4eaf0;
+  --bg: #f3f6fa;
+  --white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
+}
+
+.hero {
+  background: linear-gradient(135deg, #102b4e, #1d4774);
+  color: white;
+  padding: 34px 20px 56px;
+  text-align: center;
+}
+
+.kicker {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #cbd8e8;
+  font-weight: 800;
+}
+
+.hero h1 {
+  font-size: clamp(28px, 5vw, 42px);
+  margin: 8px 0;
+}
+
+.hero p {
+  margin: 0 auto;
+  max-width: 650px;
+  line-height: 1.55;
+  color: #e2eaf4;
+  font-size: 15px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: -28px auto 48px;
+  padding: 0 18px;
+}
+
+.panel {
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px #102b4e12;
+  border: 1px solid #e8edf3;
+  overflow: hidden;
+}
+
+.toolbar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 22px;
+  border-bottom: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+
+.lesson-tag {
+  background: var(--orange);
+  color: white;
+  font-size: 12px;
+  font-weight: 900;
+  padding: 8px 14px;
+  border-radius: 9px;
+  letter-spacing: .5px;
+}
+
+.tools {
+  display: flex;
+  gap: 9px;
+  flex: 1;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.search {
+  min-width: 220px;
+  max-width: 340px;
+  width: 100%;
+  padding: 11px 13px;
+  border: 1px solid #d5dee8;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.btn {
+  border: 1px solid #d5dee8;
+  background: white;
+  color: var(--navy);
+  padding: 10px 13px;
+  border-radius: 10px;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #f4f8fc;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1000px;
+}
+
+thead th {
+  background: var(--navy);
+  color: white;
+  text-align: left;
+  padding: 14px 16px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+}
+
+thead th:first-child {
+  width: 50px;
+  text-align: center;
+}
+
+tbody td {
+  padding: 13px 16px;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+  vertical-align: top;
+}
+
+tbody tr:nth-child(odd) {
+  background: var(--cream);
+}
+
+tbody tr:hover {
+  background: #edf5ff;
+}
+
+.num {
+  color: var(--orange);
+  font-weight: 900;
+  text-align: center;
+}
+
+.word {
+  font-weight: 850;
+  color: #273b50;
+  font-size: 15px;
+}
+
+.translation {
+  color: #965c2b;
+  font-weight: 600;
+}
+
+.sentence {
+  color: #596a7d;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.lang-label {
+  display: inline-block;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: .5px;
+  margin-right: 5px;
+  color: #102b4e;
+  background: #e7eef7;
+  padding: 2px 5px;
+  border-radius: 4px;
+}
+
+.spanish-sentence {
+  color: #3f6b55;
+  font-style: normal;
+}
+
+.spanish-sentence .lang-label {
+  color: #245b3d;
+  background: #e3f3e8;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 16px 22px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.count {
+  font-weight: 800;
+  color: var(--navy);
+}
+
+.empty {
+  padding: 32px;
+  text-align: center;
+  color: var(--muted);
+  display: none;
+}
+
+@media(max-width: 600px) {
+  .hero {
+    padding: 28px 16px 48px;
+  }
+
+  .toolbar {
+    padding: 16px;
+  }
+
+  .tools {
+    justify-content: stretch;
+  }
+
+  .search {
+    max-width: none;
+    min-width: 100%;
+  }
+
+  .btn {
+    flex: 1;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .footer {
+    padding: 14px 16px;
+  }
+}
+
+@media print {
+  body {
+    background: white;
+  }
+
+  .hero {
+    padding: 18px;
+    background: white;
+    color: var(--navy);
+  }
+
+  .hero p,
+  .kicker {
+    color: #64748b;
+  }
+
+  .container {
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .panel {
+    box-shadow: none;
+    border: 0;
+  }
+
+  .toolbar .tools {
+    display: none;
+  }
+
+  .toolbar {
+    padding: 12px 0;
+  }
+
+  thead th {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  tbody tr:nth-child(odd) {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+  <div class="kicker">Lead Book 2 · Vocabulary Practice</div>
+  <h1>Spelling &amp; Vocabulary</h1>
+  <p>
+    Lesson 1 — Study the words, learn their meaning in Spanish,
+    and read each example sentence.
+  </p>
+</header>
+
+<main class="container">
+<section class="panel">
+
+  <div class="toolbar">
+    <span class="lesson-tag">LESSON 1</span>
+
+    <div class="tools">
+      <input
+        class="search"
+        id="search"
+        type="search"
+        placeholder="Buscar palabra o traducción..."
+        aria-label="Buscar vocabulario"
+      >
+
+      <button class="btn" onclick="window.print()">
+        Imprimir / Guardar PDF
+      </button>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Word</th>
+          <th>Español</th>
+          <th>Example Sentence (English)</th>
+          <th>Example Sentence (Español)</th>
+        </tr>
+      </thead>
+
+      <tbody id="words">
+
+        <tr>
+          <td class="num">1</td>
+          <td class="word">obstacle</td>
+          <td class="translation">obstáculo</td>
+          <td class="sentence">
+            <span class="lang-label">EN:</span>
+            The fallen tree was an obstacle on the road.
+          </td>
+          <td class="sentence spanish-sentence">
+            <span class="lang-label">ES:</span>
+            El árbol caído era un obstáculo en el camino.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="num">2</td>
+          <td class="word">speed</td>
+          <td class="translation">velocidad</td>
+          <td class="sentence">
+            <span class="lang-label">EN:</span>
+            The car drove at a high speed on the highway.
+          </td>
+          <td class="sentence spanish-sentence">
+            <span class="lang-label">ES:</span>
+            El automóvil iba a gran velocidad por la carretera.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="num">3</td>
+          <td class="word">concentration</td>
+          <td class="translation">concentración</td>
+          <td class="sentence">
+            <span class="lang-label">EN:</span>
+            You need concentration to do well on tests.
+          </td>
+          <td class="sentence spanish-sentence">
+            <span class="lang-label">ES:</span>
+            Necesitas concentración para que te vaya bien en los exámenes.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="num">4</td>
+          <td class="word">path</td>
+          <td class="translation">camino</td>
+          <td class="sentence">
+            <span class="lang-label">EN:</span>
+            We stayed on the path so we wouldn’t get lost in the woods.
+          </td>
+          <td class="sentence spanish-sentence">
+            <span class="lang-label">ES:</span>
+            Nos quedamos en el camino para no perdernos en el bosque.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="num">5</td>
+          <td class="word">instructor</td>
+          <td class="translation">instructor(a)</td>
+          <td class="sentence">
+            <span class="lang-label">EN:</span>
+            Our art instructor showed us how to paint beautiful flowers.
+          </td>
+          <td class="sentence spanish-sentence">
+            <span class="lang-label">ES:</span>
+            Nuestro instructor de arte nos mostró cómo pintar flores hermosas.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="num">6</td>
+          <td class="word">worldwide</td>
+          <td class="translation">mundialmente</td>
+          <td class="sentence">
+            <span class="lang-label">EN:</span>
+            Soccer is a sport played worldwide.
+          </td>
+          <td class="sentence spanish-sentence">
+            <span class="lang-label">ES:</span>
+            El fútbol es un deporte que se practica mundialmente.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="num">7</td>
+          <td class="word">safety</td>
+          <td class="translation">seguridad</td>
+          <td class="sentence">
+            <span class="lang-label">EN:</span>
+            Always wear a helmet for safety when riding a bike.
+          </td>
+          <td class="sentence spanish-sentence">
+            <span class="lang-label">ES:</span>
+            Siempre usa un casco por seguridad cuando andes en bicicleta.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="num">8</td>
+          <td class="word">forward</td>
+          <td class="translation">hacia adelante</td>
+          <td class="sentence">
+            <span class="lang-label">EN:</span>
+            He took two steps forward to get a better view.
+          </td>
+          <td class="sentence spanish-sentence">
+            <span class="lang-label">ES:</span>
+            Él dio dos pasos hacia adelante para tener una mejor vista.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="num">9</td>
+          <td class="word">behave</td>
+          <td class="translation">comportarse</td>
+          <td class="sentence">
+            <span class="lang-label">EN:</span>
+            You must behave properly in the classroom.
+          </td>
+          <td class="sentence spanish-sentence">
+            <span class="lang-label">ES:</span>
+            Debes comportarte adecuadamente en el salón de clases.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="num">10</td>
+          <td class="word">course</td>
+          <td class="translation">circuito</td>
+          <td class="sentence">
+            <span class="lang-label">EN:</span>
+            The runners raced around the track course.
+          </td>
+          <td class="sentence spanish-sentence">
+            <span class="lang-label">ES:</span>
+            Los corredores dieron vueltas alrededor del circuito de la pista.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="num">11</td>
+          <td class="word">movement</td>
+          <td class="translation">movimiento</td>
+          <td class="sentence">
+            <span class="lang-label">EN:</span>
+            I watch the movement of the leaves as the wind blows.
+          </td>
+          <td class="sentence spanish-sentence">
+            <span class="lang-label">ES:</span>
+            Observo el movimiento de las hojas mientras sopla el viento.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="num">12</td>
+          <td class="word">accurate</td>
+          <td class="translation">preciso</td>
+          <td class="sentence">
+            <span class="lang-label">EN:</span>
+            Using an accurate map helps people find the right place easily.
+          </td>
+          <td class="sentence spanish-sentence">
+            <span class="lang-label">ES:</span>
+            Usar un mapa preciso ayuda a las personas a encontrar fácilmente el lugar correcto.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="num">13</td>
+          <td class="word">ethical</td>
+          <td class="translation">ético</td>
+          <td class="sentence">
+            <span class="lang-label">EN:</span>
+            Being honest is an important ethical principle.
+          </td>
+          <td class="sentence spanish-sentence">
+            <span class="lang-label">ES:</span>
+            Ser honesto es un principio ético importante.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="num">14</td>
+          <td class="word">courageous</td>
+          <td class="translation">valiente</td>
+          <td class="sentence">
+            <span class="lang-label">EN:</span>
+            She was a courageous explorer who faced many dangers.
+          </td>
+          <td class="sentence spanish-sentence">
+            <span class="lang-label">ES:</span>
+            Ella era una exploradora valiente que enfrentó muchos peligros.
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <div class="empty" id="empty">
+    No se encontraron palabras. Prueba con otra búsqueda.
+  </div>
+
+  <div class="footer">
+    <span><span class="count" id="count">14 palabras</span> · Lesson 1</span>
+    <span>Practica la pronunciación leyendo cada oración en voz alta.</span>
+  </div>
+
+</section>
+</main>
+
+<script>
+const search = document.getElementById("search");
+const rows = [...document.querySelectorAll("#words tr")];
+const count = document.getElementById("count");
+const empty = document.getElementById("empty");
+
+search.addEventListener("input", () => {
+  const q = search.value.trim().toLocaleLowerCase("es");
+  let visible = 0;
+
+  rows.forEach(row => {
+    const show = row.innerText.toLocaleLowerCase("es").includes(q);
+    row.style.display = show ? "" : "none";
+
+    if (show) visible++;
+  });
+
+  count.textContent =
+    `${visible} ${visible === 1 ? "palabra" : "palabras"}`;
+
+  empty.style.display = visible ? "none" : "block";
+});
+</script>
+
+</body>
+</html>
